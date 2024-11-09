@@ -1,0 +1,471 @@
+java. 
+
+variables de entorno. Agregar una nueva variable de entorno. Classpath. 
+
+Hacer referencia a las classes del directorio actual con el punto despues de. 
+
+C:\Program Files\Java\jdk1.8.0_111\lib
+
+Importante
+
+luego agregar el bin 
+
+
+C:\Program Files\Java\jdk-11\bin
+
+
+pasos
+
+entrar a variable de entorno:
+
+click abajo en variables de entorno
+
+nuevo y agregar el class path
+
+luego editar
+
+
+
+en java vamos a usar dos herramientas:
+
+Compilador java: javac.exe
+
+interprete: java.exe
+
+
+java compila y luego interpreta
+
+
+cuando compilas con javac creas un ficher .class. 
+
+
+
+Java Runtime environment   JRE (es la JVM) Maquiina virtual java que permite ejecutar codigo en formato java. traductor
+
+cuando se compila se convierte en bytecode y cualquier maquina con JVM puede utilizarla
+
+JDK es el kit the desarrollo
+
+
+
+el martillo en el Netbeans es el que se usa para compilar, y el martillo con la escoba se usa para resolve cietos errores
+
+Tipos de programas en JAVA:
+
+-Entorno bash, significa que estan corriendo en el sistema operativo. Tambien se puede correr en entorno web
+
+-Entorno WEB(Applets entorno cliente, o Servlets, JSP JPA, etc..entorno servidor).
+
+carpeta lib = librerias
+
+carpeta bin = todas las herramientas de java.
+
+
+la mayoria de librerias en java vienen en formato jar. EJ.   .jar   son ifchero cimprimidos tipo. zip
+
+por ejemplo conectarse a my sql a traves de .jar.
+
+
+en el bin build es la carpeta donde se guardan las clases. 
+
+
+
+averiguar sobre applets; como funcionan y que hacen?
+
+
+el  literal es lo que va a la derecha del igual
+
+
+operador es el tipo de proceso que estamos haciendo
+
+
+en enteros asigna normalment int que es de 32 por default. 
+
+
+cuando asignamos decimales  a una variable float para que te lo tome y no haya problemas de compilacion hay que
+
+
+asignar una F al final del número: ejemplo 2.3F
+
+asigna normalmente double. que es de 64 bits
+
+
+
+* que es casting en Java?
+
+------------------------------------------------------------
+
+
+Ejemplos de tipos de variables: 
+
+
+ float PI = 3.14f;   cuando asignamos decimales  a una variable float para que te lo tome y no haya problemas de compilacion hay que
+asignar una F al final del número: ejemplo 2.3F
+
+asigna normalmente double. que es de 64 bits
+        
+        char letra = 'a';  solo un caracter y siempre con comillas simples.
+        
+        
+        
+        boolean verdad=true;
+        
+        
+        
+        String cadena = "Hoy es Miércoles";  Stings van con comillas dobles.
+        
+        
+        
+        en java los Array se consideran objeots de clase array.
+        
+        array y string son objetos.
+        
+        java no utiliza ASCII (1 byt por carrácter), utiliza UNICODE (2 byte por carácter); bits por carácteres. 8
+        
+        
+        
+        variables de instancia : va dentro de las calses fuera de los métodos. parap oder utilizarla hay que usar un objeto.
+        
+        vriables v = new Variables();
+        
+        v.numero=0;
+        
+        abstracion identifiar todos los metodos y ... comunes del objeto. 
+        
+        
+        Equipo e1= new Equipo ();
+        
+        class Equipco {
+        
+        string nombre;
+        int njudadores;
+        string ciudad;
+        string division;
+        
+        }
+        
+        asignamos valor a nombre:   e1.nombre = "Universidad de Chile"
+        
+        En caso de asignar la variable con static :  seria Equipo.nombre= "Universidad de chile"
+        
+        
+        cada objeto que creamos dentro de un class tiene su propio numbero en memoria.
+        
+        pero si se declara la variable como static , cuando creo los tres boejtos no tiene su propia copia en memoria de la variable numbeor, solo
+        hay una variable numero y todos estan apuntando a la misma posicion de memoria.
+        
+        
+        
+        El metodo estatico va a sar el encargado de modificar el valor. Es mala practica modificar variables de clase a mano.
+        
+        
+        1) para poder acceder a una propiedad o metodo hace falta un objeto.  Si no tengo el objeto la ùnica forma de acceder 
+        es si esa propiedad o método static. 
+        
+        
+        Garbage collector: Sistema automàtico que tiene java para liberar los objetos que en ese momento se han dejado de utilizar. 
+        
+        java elimina de la memoria aquellos objeto que no están siendo utilizado por el programa. El garbajge collector va 
+        al area de la memoria donde están por ejemplo los objetos null y los borra. 
+        
+        
+        java internament convierte todo en punteros. pero no existe el tipo de variable especifico de esto. 
+        
+        
+        para activar el Garbage collector: es System.ge();
+        
+        
+        ----------------------------------------------------------------------------------------------------------
+        
+        Si tienes varias clases por fichero o por archivo solamente una puede ser public. Además tiene que ser la 
+        que tiene que llevar el método main.   el JVM o maquina virtual lo que va ir a buscar es el método main. 
+        todo lo que sucede en el programa sucede en el main. PREGUNTA DE EXAMEN.
+        
+        
+        si tienes varios ficheros con una sola clase cada una todos pueden ser pública.
+        
+        app =calse main "aplicacion principal"
+        
+        
+        ------------------------------------------------------------------
+        
+        patrón getter/setter
+        
+        cuando queramos modificar el valor de una propiedad utlizamos set.
+        
+        cuando queramos obtener el valor de una porpied get.
+        
+        siempre se accede set and get. 
+        
+        
+       
+        
+        
+        
+        -----------------------------------------
+        PREGUNtA DE EXAMEN
+        
+        jAVA.lang es el unico paquete que no hay que importar. clases en el paquete: system, Read, thread, clases
+        wrapper.
+        
+        String= es un array
+        int - class interger
+        float- class float
+        Wrapper class, es la clase que reperesenta a los tipos primitivos, 
+        
+        
+        
+        ----------------------------------------------
+        
+        una clase puede heredar el comportamiento de otra clase. 
+        la flesha siempre se pone apuntando hacia el padre.. class B extends A{}. Esto significa que A va tener las propiedades de A pero
+        ve va tener las props de A + props de B.    class C extends B. Escomo en cascada C tendria: A+B+C.
+        
+        La clase más baje seria la "clase Base"   y la de arriba es la clase Padre o SuperClase.
+        
+        
+        Entonces existe una jerarquia de clases. 
+        
+        
+        herencia multiple: viene de C++. Esto no existe en JAVA.
+        
+        herencia simple: una clase solo puede heredar de una clase. Una clase puede heredar de varias interfaces.
+        
+         
+        
+        -------------------------------------------------------------------
+        
+        prototipo del metodo =  public int suma (intx, inty) => estos dos paramétros se llaman parámetros formales
+        (con el prototipo vemos que tipo de parametro recive y que tipo de dato devuelve tambien).
+        
+        int sum = suma(3,4) => estos serian parámetros Reales.
+        
+        no se puede llamar a una método sin crear una clase o poner static.!! importante.
+        
+         
+        
+        
+        
+         
+        "Método normal" esta implementado por JVM 
+
+        sistem esta en Java. lang  y no se importa.
+
+       La implementacion de lo que hace el meteodo esta dentro del a clase system. 
+       
+         
+         "Metodo de respuesta" o metodo call back, lo implementa el programador y lo ejecuta la JVM.
+         
+         -------------------------------------------------------------
+         
+         todos los metodos de los applets son de "Método de respuesta".
+         
+         
+         
+         -------------------------------------------------------------
+         
+         AWT lo scadel sistema operativo    
+         se pinta en ventana hija              JFC es swins el componente se programa en java se pitna en ventana padre          MFC => vienen de C++
+         abstract
+          window 
+          toolkit
+         
+         -------------------------------------------------------------------
+         
+         J2SE      BASH = SISTEMA OPERATIVO DE FONDO
+         
+                   APPLETS = HTML
+                   
+                   en applets el layout viene predefinido.
+                   
+       ----------------------------------------------------------------------------
+       
+           Swin es java extensions.   import javax porque es java extensions.
+           
+                                        Gerarquia RVT (Aprenderlo)
+           
+                                   object es la madre de todas las clases -
+                                                                     components -  (label,Text field, button, choice)
+                                                                           container-
+                                                                             
+                                 Panel- (CONTENEDOR PURO *)                 (VIENE EN EL EXAMEN) window-(es abstracta, no se puede hacer new Window)
+                         
+        Applet-(POR ESO NO ES NECESARIO DEFINIR LAYOUT *)                    Dialog- (CUADRO DE DIALOGO)                       Frame- (TU VENTANA)
+                                                                                                                              mI VENTANA DESE FRAME
+                                 
+                                 
+            sistema de gestion de eventos, componentes y container es lo que se necesita para hacer interfaz grafica
+
+
+ ------------------------------------------------------------------------------------
+ 
+ boarderlayout es otro
+ 
+ cuando usamos  este layout, se pone la variable de direccion con la primera mayuscula y las demas minusculas "North"
+
+
+---------------------------------------
+
+VECTOR
+un vector es una estrcutura que almacena objetos, 
+en un array normal no podemos guardar cosas de diferentes tipos en un vector si
+
+puede crecer en tiempo de ejecucion
+
+-----------------------------------
+
+DownCasting
+
+solo se puede hacer cuando el tipo que devuelve el metodo esta por encima del metodo que quiero asignar. 
+
+Dentro del vector son todos tipos objects, cuando tu lo sacas se convierte el objeto de tipo clase.
+
+------------------------------------------------------------------
+
+EJERCICIO
+
+crear una clase coche, con marca modelo matricula y color
+
+luego  un AppCoches con dos botones al norte en panel crear coche  y otro boton listar coches , con txt area, boton cerrar ventana y 
+en el texto area nos va a listar todos los coches creados
+
+luego usar lavels para marca modelo matricula color y txt que se va ir llenando a medica que 
+cuando se guarda el vehiculo se borra el contenido 
+
+y abajo en el label de el sure usamos fondo verde que diga coche creado exitosamente.
+
+
+-------------------------------------------------------------------------
+
+source object => listener object
+
+source object es el objeto que produce el evento.
+
+listener object es un objeto de la interfaz que contiene el metodo que procesa el evento.
+
+
+Para saber quien es el listener, tiene que saber que metodo procesa el evento?, luego en que interfaz esta?
+
+---------------------------------------------
+clases internas y clases anónimas => android es todo clases anonimas
+
+
+Actionperformed sirve para cuatro cosas:
+
+1.Capturar el click en el boton.
+2.Capturar el input en la caja de texto.
+3.click en un elemento de una lista desplegable.
+4.un elemento de menú.
+
+-----------------------------------------------------------------
+
+ Clase anonima: es una clase que no tiene nombre y que cuando la defino 
+
+
+
+
+--------------------------------------------------------------------------------
+
+void window Methods 
+
+como WindowActivated
+windowClosed
+windwoclosing
+windowDeactivated
+windowDeiconfied
+windowIconofied
+WindowOpened
+
+
+--------------------------------------------------------------------
+
+tener claro que es variable de instancia, variable local y variable de clase
+
+
+la variables locales es necesario inicializarlas antes de usarlas.
+
+
+---------------------------------------------------------------
+IMPORTANTE
+
+vamos a tner AppBd que como es la principal va tener el main , donde vamos a llamar (haciendo llamadas a los otros
+
+metodos cargar.java que seria el Metodo cargarDRV y luego el Metodo concectar
+
+  |||||que tipo y que devuleve y que recibe el metodo cargarDRV  ||| | prara el examn y que tengo que poner
+  dentro del metodo
+  
+  
+  LA BUENA PRACTICA dice que el try catch de comprobacion se haga en la llamada y no en la definicion
+  
+  lista de Throws: cuando un método lanza una excepción y no quiere capturarla debe de avisar o notificar a quien lo llama 
+  a través del throws. 
+  
+   Poner el throws en la cabecera de la definicion. 
+   
+  Public , permite compilar y pone entre parentesis throw classNotfoundException
+  
+  lista puede se puede separar varias excepciones por comas.
+  
+  ---------------------------------------------------------
+  
+SISTEMAS
+
+los rangos en una ip de la cantidad de host en una determinada red esta dada por los numeros de cero que quedan 
+luego de hacer un subneting . por que se agregan en forma de unos la cantidad de redes extra del subneting. por
+ejemplo en un mascara de red clase C de 24 si hay un subneting de hast a 28 se agregarian 4 unos al ultimo 
+bloque de ceros y unos. 
+
+
+
+-------------------------------------------------------------------------------
+
+sentencias de actualizacion
+
+Tenemos dos tipos de sentencia: 
+
+Actualizar:
+- Crate table                       Se usa esta sentencia en java: executreUpdate(SQL)
+- insert into
+- update
+- delete 
+- drop table
+
+(hacer actualizaciòn no obtienes registros
+
+que devuelve: 
+
+0 =>  0 registros afectados
+n=>  n registros afectados , si hago un insert devuelve 1, si hago 20 devuelve 20
+-1 => afecta toda la tabla ---- como el drop table
+int =>
+
+*****************************************************************************************************************
+
+consulta :                                         execute query (SQL)
+-select
+
+
+que devuelve: 
+
+ResultSet : es una lista de registros que cumple con un condición. Ej. where categoria is dulce. es una sub categoria
+Se denomina también vista.
+
+
+
+
+actualizar y consulta tienen en común: driver , conexion  y crear statment.
+
+
+
+****Tambien se puede hacer un execute = que lo que devuelve es un True o un false. si devuelve true se trataba de una consulta
+si devuelve false se trataba de una actualizaciòn. No se usa mucho, 
+
+
+
+-------------------------------
+
+resultSet no es una clase es una interface
+connection no es una clase es una interface
+statment no es una clase es una interface
+
