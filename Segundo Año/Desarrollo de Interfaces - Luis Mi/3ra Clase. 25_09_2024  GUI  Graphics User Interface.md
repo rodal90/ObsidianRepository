@@ -1,86 +1,115 @@
 
-Es de Front.
+## **Front-End en Java (Interfaz Gráfica de Usuario - GUI)**
 
-1. Contenedor en esté caso de Java es una ventana Windows.
-2.  Componentes: botones , caja de texto, labels, checkbox, listas desplegables, input, etc. hay dos tipos de componentes , los que saca del sistema operativo y los que programa en java. Los que sacan fuera del sistema operativo "ligeros" y los que programa en java se llaman "heavy". Componentes avanzados: Jtablet y otros, son interactivos.
-3.  SGE Sistemas de gestión de eventos: como clicks, o cuando paso por encima o cuando tal cosas suceda has tal cosa.
-                   Sistemas de eventos:
-                   - Inference Model
-                   - EDM: Es más moderno pero es un poco más complejo. Listeners, dos objetos implicados en cada evento (el source object puede ser por ejemplo un botón, ventana, etc. : es el que produce el evento y el listener object es el que lo escucha siempre es un objeto de una interface Java (esta clase solo contiene métodos vacíos o constantes)).
+### **1. Contenedores y Componentes**
 
--  **Los métodos static hacen que no sea necesario crearse un objeto.
+- **Contenedor**: En Java, un contenedor es un elemento gráfico que puede contener otros componentes. Un ejemplo es una ventana en sistemas operativos Windows.
+- **Componentes**: Elementos interactivos como botones, cajas de texto, etiquetas (labels), casillas de verificación (checkbox), listas desplegables, campos de entrada, entre otros.
+    - **Tipos de componentes**:
+        - **Pesados (heavy)**: Dependen del sistema operativo para su apariencia y funcionamiento.
+        - **Ligeros (lightweight)**: Programados en Java, independientes del sistema operativo, ofrecen mayor personalización.
+    - **Componentes avanzados**: Ejemplo: `JTable` y otros interactivos.
 
-Hay dos librerias con las cuales podemos trabajar la interfaz gráfica:  
+---
 
-Libreria AWT: Abstract Window Toolkit saca del sistema operativo la apariencia de sus componentes.
+### **2. Gestión de Eventos (SGE)**
 
-Libreria Swing: Este se programa en Java, entonces nos da más libertad para cambiar todo lo estético. El paquete event que maneja todos los eventos, por ejemplo los "import" que es lo que se utiliza para importar la bibliotecas están en AWT asi que tendremos que usarla igual, aunque usemos en el diseño Swing.
+- **Eventos**: Acciones como clics, desplazamientos del ratón o interacciones del teclado.
+- **Modelos de Sistemas de Eventos**:
+    - **Inference Model**: Modelo más simple.
+    - **EDM (Event Delegation Model)**:
+        - Más moderno y complejo.
+        - Implica dos objetos:
+            - **Source Object**: El objeto que produce el evento (botón, ventana, etc.).
+            - **Listener Object**: El objeto que escucha y reacciona al evento. Implementa una interfaz Java (que define métodos vacíos o constantes).
 
-import.java.awt.* -> Solo importa todas las clases, pero no los paquetes.
-import.java.awt.event.* ->importa todas las clases del paquete `java.awt.event`. Este paquete contiene clases que permiten manejar eventos en interfaces gráficas de usuario (GUI), como acciones del teclado, clics de ratón, movimientos del ratón, y otros eventos relacionados con la interacción del usuario.
+---
 
-Constructor: Es un método que tiene el nombre de la clase, y normalmente se utiliza para inicializar las variables y 
+### **3. Librerías para Interfaces Gráficas en Java**
 
-
-**Interfaz**: En Java, una **interfaz** es una colección de métodos abstractos (métodos que no tienen implementación) y constantes que las clases pueden implementar. Las interfaces definen un contrato que cualquier clase que las implemente debe cumplir, pero no proporcionan la implementación de los métodos, solo las declaraciones. Una interfaz especifica qué debe hacer una clase, pero no cómo hacerlo.
-
-### Características clave de una interfaz en Java:
-
-1. **Declaración de métodos sin implementación**:
+- **AWT (Abstract Window Toolkit)**:
     
-    - Los métodos en una interfaz no tienen cuerpo, lo que significa que no proporcionan detalles sobre cómo se realiza una tarea, solo que la tarea debe realizarse.
+    - Usa componentes del sistema operativo, lo que le da una apariencia nativa.
+    - Menos flexible estéticamente.
+- **Swing**:
+    
+    - Componentes programados en Java, más personalizables y estéticamente flexibles.
+    - Aún utiliza partes de AWT, como el paquete `java.awt.event` para manejar eventos.
 
-**Overload o sobrecargado**: Se aplica a métodos (Polimorfismo) y también se aplica a operadores (ej. =,!=.+ ( el + esta sobrecargado porque sirve para sumar y también para concatenar)).
-
-***INFO: Dos objetos utilizarán interfaces para comunicarse entre ellos, y el núcleo será una clase privada.
-
-----
-
-### Corrección del enunciado:
-
-1. **"Las clases abstractas deben tener por lo menos un método abstracto"**: Esto **no es obligatorio**. Una clase abstracta **puede tener cero o más métodos abstractos**. Es decir, puede que una clase abstracta no tenga ningún método abstracto, pero igualmente puede ser declarada como abstracta. Lo importante es que una clase abstracta **no puede ser instanciada directamente**.
-    
-2. **"Se define como Abstract"**: Una clase abstracta se declara con la palabra clave `abstract` en su definición, al igual que los métodos abstractos. Por ejemplo:
-    
-    java
-    
-    Copiar código
-    
-    `abstract class Animal {     abstract void hacerSonido();  // Método abstracto }`
-    
-3. **"El método tiene que ser redefinido, cuando hereda"**:
-    
-    - Si una clase hija hereda de una clase abstracta, **debe proporcionar implementaciones (redefinir)** todos los métodos abstractos que la clase abstracta tenga, a menos que también sea una clase abstracta.
-    - Si no lo hace, entonces la subclase también deberá declararse como abstracta.
-    
-    Ejemplo:
-    
-    java
-    
-    Copiar código
-    
-    `abstract class Animal {     abstract void hacerSonido();  // Método abstracto, no tiene implementación }  class Perro extends Animal {     @Override     void hacerSonido() {         System.out.println("El perro ladra");     } }`
-    
-4. **"Como cuando una clase hereda de una interfaz, los métodos de la interfaz se redefinen"**:
-    
-    - Esto es correcto en parte. Cuando una clase implementa una interfaz, **debe proporcionar una implementación** para todos los métodos de la interfaz, ya que los métodos de la interfaz son siempre abstractos (excepto los métodos `default` o `static` introducidos a partir de Java 8).
-    - En el caso de una clase abstracta, sin embargo, no necesariamente tiene que implementar todos los métodos abstractos de inmediato; puede dejar que la clase que herede de ella lo haga.
-
-### Comparación entre clases abstractas e interfaces:
-
-- **Clases abstractas**:
-    - Pueden tener métodos abstractos y métodos con implementación.
-    - Pueden tener campos (variables de instancia), y estos pueden tener diferentes modificadores de acceso (como `private`, `protected`, etc.).
-    - Solo pueden extenderse de una clase abstracta a la vez (herencia simple).
-- **Interfaces**:
-    - Antes de Java 8, solo podían tener métodos abstractos. A partir de Java 8, pueden tener métodos con implementación mediante `default` o `static`.
-    - Todos los métodos abstractos son implícitamente `public` y no pueden tener cuerpos (excepto los `default` y `static`).
-    - Una clase puede implementar varias interfaces a la vez (herencia múltiple).
-
-### Ejemplo de clases abstractas:
+**Importación de clases y paquetes**:
 
 java
 
+Copiar código
+
+`import java.awt.*;          // Importa todas las clases de AWT (sin paquetes).   import java.awt.event.*;    // Importa todas las clases del paquete de eventos en AWT.`  
+
+---
+
+### **4. Métodos y Constructores**
+
+- **Métodos estáticos (`static`)**:
+    
+    - No requieren la creación de un objeto para ser utilizados.
+    - Se pueden llamar directamente desde la clase.
+- **Constructores**:
+    
+    - Métodos especiales que comparten el nombre de la clase.
+    - Se usan para inicializar variables y preparar el objeto al ser creado.
+
+---
+
+### **5. Interfaces en Java**
+
+- Una interfaz define un contrato (conjunto de métodos abstractos y constantes) que una clase debe implementar.
+- **Características principales**:
+    - **Métodos abstractos**: Solo se declaran, sin implementación (hasta Java 8).
+    - A partir de Java 8, pueden tener métodos con implementación (`default` y `static`).
+    - Permiten herencia múltiple, ya que una clase puede implementar varias interfaces.
+
+---
+
+### **6. Clases Abstractas**
+
+- Se declaran con la palabra clave `abstract`.
+- Pueden tener métodos con implementación o métodos abstractos (sin cuerpo).
+- Una clase hija debe implementar todos los métodos abstractos o declararse también como abstracta.
+
+**Ejemplo de clase abstracta y herencia**:
+
+java
+
+Copiar código
+
+`abstract class Vehiculo {     abstract void arrancar();  // Método abstracto.      void detener() {           // Método con implementación.         System.out.println("El vehículo se ha detenido.");     } }  class Coche extends Vehiculo {     @Override     void arrancar() {         System.out.println("El coche ha arrancado.");     } }  public class Main {     public static void main(String[] args) {         Coche miCoche = new Coche();         miCoche.arrancar();  // Implementación del método en la clase Coche.         miCoche.detener();   // Método heredado de la clase Vehiculo.     } }`
+
+---
+
+### **7. Polimorfismo: Sobrecarga y Sobrescritura**
+
+- **Sobrecarga (`Overload`)**:
+    
+    - Un método o un operador tiene múltiples formas dependiendo de los parámetros o el contexto.
+    - Ejemplo: El operador `+` se usa para sumar números y concatenar cadenas.
+- **Sobrescritura (`Override`)**:
+    
+    - Una clase hija redefine un método heredado de una clase padre para modificar su comportamiento.
+
+---
+
+### **8. Modelo de Seguridad Sandbox**
+
+- En Java, las aplicaciones no pueden realizar conexiones con servidores distintos al servidor de origen. Esto limita posibles riesgos de seguridad.
+
+---
+
+### **Comparación: Clases Abstractas vs Interfaces**
+
+| **Aspecto**                | **Clase Abstracta**                         | **Interfaz**                                |
+| -------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Métodos con implementación | Sí                                          | Solo desde Java 8 (`default`, `static`)     |
+| Herencia                   | Una sola clase abstracta (herencia simple). | Puede implementar múltiples interfaces.     |
+| Modificadores de acceso    | Permite `private`, `protected`, `public`.   | Todos los métodos son `public` (implícito). |
 
 
 ```java
