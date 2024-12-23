@@ -81,8 +81,36 @@ java
 
 Copiar código
 
-`abstract class Vehiculo {     abstract void arrancar();  // Método abstracto.      void detener() {           // Método con implementación.         System.out.println("El vehículo se ha detenido.");     } }  class Coche extends Vehiculo {     @Override     void arrancar() {         System.out.println("El coche ha arrancado.");     } }  public class Main {     public static void main(String[] args) {         Coche miCoche = new Coche();         miCoche.arrancar();  // Implementación del método en la clase Coche.         miCoche.detener();   // Método heredado de la clase Vehiculo.     } }`
+```java 
+abstract class Vehiculo {
+    // Método abstracto.
+    abstract void arrancar();  
 
+    // Método con implementación.
+    void detener() {  
+        System.out.println("El vehículo se ha detenido.");
+    }
+}
+
+class Coche extends Vehiculo {
+    @Override
+    void arrancar() {
+        System.out.println("El coche ha arrancado.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Coche miCoche = new Coche();
+        miCoche.arrancar();  // Implementación del método en la clase Coche.
+        miCoche.detener();   // Método heredado de la clase Vehiculo.
+    }
+}
+
+
+
+
+```
 ---
 
 ### **7. Polimorfismo: Sobrecarga y Sobrescritura**

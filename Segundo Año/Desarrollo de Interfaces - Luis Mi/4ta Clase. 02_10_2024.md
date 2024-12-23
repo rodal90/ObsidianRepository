@@ -12,46 +12,46 @@ Un `ActionEvent` es un tipo de evento en Java que ocurre cuando el usuario reali
     - Método asociado: `actionPerformed`.
     - **Ejemplo:**
         
-        java
+        ```java 
+    `JButton boton = new JButton("Haz clic aquí"); 
+    
+    boton.addActionListener(e -> System.out.println("Botón clickeado."));`
+    ```
+
         
-        Copiar código
-        
-        `JButton boton = new JButton("Haz clic aquí"); boton.addActionListener(e -> System.out.println("Botón clickeado."));`
         
 2. **Seleccionar un elemento en un menú:**
     
     - Al seleccionar una opción en un menú desplegable (`JMenu`), se dispara un `ActionEvent`.
     - **Ejemplo:**
         
-        java
+        ```java 
         
-        Copiar código
-        
-        `JMenuItem menuItem = new JMenuItem("Abrir"); menuItem.addActionListener(e -> System.out.println("Opción del menú seleccionada."));`
+        `JMenuItem menuItem = new JMenuItem("Abrir"); 
+        menuItem.addActionListener(e -> System.out.println("Opción del menú seleccionada."));`
+    ```
         
 3. **Enviar un formulario:**
     
     - Pulsar el botón "Enviar" o "Aceptar" en un formulario puede disparar un `ActionEvent` para procesar los datos.
     - **Ejemplo:**
         
-        java
-        
-        Copiar código
-        
-        `JButton enviar = new JButton("Enviar"); enviar.addActionListener(e -> System.out.println("Formulario enviado."));`
+        ```java  
+        `JButton enviar = new JButton("Enviar"); 
+        enviar.addActionListener(e -> System.out.println("Formulario enviado."));`
+```
         
 4. **Presionar "Enter" en un campo de texto:**
     
     - Escribir en un campo de texto (`JTextField`) y presionar "Enter" genera un `ActionEvent` que se puede gestionar.
     - **Ejemplo:**
         
-        java
+        ```java
         
-        Copiar código
+        `JTextField texto = new JTextField(20); 
+        texto.addActionListener(e -> System.out.println("Texto ingresado: " + texto.getText()));`
         
-        `JTextField texto = new JTextField(20); texto.addActionListener(e -> System.out.println("Texto ingresado: " + texto.getText()));`
-        
-
+```
 ---
 
 ## **2. Downcasting en Java**
