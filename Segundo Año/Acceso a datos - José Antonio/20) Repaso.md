@@ -118,7 +118,20 @@ Cuando sucede que hay una explosión demográfica Hay que distinguir la tenencia
 
 
 
+----
 
+SERVICIOS 09/01/2025
 
+Los servicios son los que tienen el modelo de negocios.
+
+---
+
+Uso para autorizar el uso: 
+
+Asume que hay un sistema con usuarios y roles. 
+
+@Secured ({"USER","MANAGER"})
+@RolesAllowed ({"USER","MANAGER"})
+@PreAuthorize("hasRole"('USER') or hasRole('MANAGER')")
 
 
