@@ -11,10 +11,14 @@
             "id": "24f51e7c1b068019",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "CodewarConceptos/CODWARS EJERCICIOS/CODEWARS EJERCICIO 1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "CODEWARS EJERCICIO 1"
             }
           }
         ]
@@ -160,12 +164,12 @@
   },
   "active": "24f51e7c1b068019",
   "lastOpenFiles": [
+    "PROYECTO FINAL BIBLIOTECA/Planificación.md",
     "Segundo Año/Emprendimiento Empresarial-Mar/Punto Muerto.md",
     "Segundo Año/Acceso a datos - José Antonio/20) Repaso.md",
     "Segundo Año/Acceso a datos - José Antonio/19) Programación Orientada a Aspectos 28_11_2024.md",
     "CodewarConceptos/CODWARS EJERCICIOS/CODEWARS EJERCICIO 1.md",
     "CodewarConceptos/ABSTRACCIONES DE CONCEPTOS.md",
-    "PROYECTO FINAL BIBLIOTECA/Planificación.md",
     "PROYECTO FINAL BIBLIOTECA",
     "CodewarConceptos/CODWARS EJERCICIOS",
     "CodewarConceptos",
