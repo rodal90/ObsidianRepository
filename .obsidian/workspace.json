@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a34f87571b3daa9e",
+        "id": "e1e8df0449d4e471",
         "type": "tabs",
         "children": [
           {
-            "id": "24f51e7c1b068019",
+            "id": "6bd6dc871531e56f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CodewarConceptos/CODWARS EJERCICIOS/CODEWARS EJERCICIO 1.md",
+                "file": "HAMASON PROYECTO JOSE ANTONIO/Data Base.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CODEWARS EJERCICIO 1"
+              "title": "Data Base"
             }
           }
         ]
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "37cf70b6a45fb181",
@@ -159,16 +159,19 @@
       "canvas:Crear nuevo lienzo": false,
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false
+      "command-palette:Abrir paleta de comandos": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "24f51e7c1b068019",
+  "active": "6bd6dc871531e56f",
   "lastOpenFiles": [
+    "Segundo Año/Acceso a datos - José Antonio/Frame.md",
+    "HAMASON PROYECTO JOSE ANTONIO/Data Base.md",
+    "CodewarConceptos/CODWARS EJERCICIOS/CODEWARS EJERCICIO 1.md",
     "PROYECTO FINAL BIBLIOTECA/Planificación.md",
     "Segundo Año/Emprendimiento Empresarial-Mar/Punto Muerto.md",
     "Segundo Año/Acceso a datos - José Antonio/20) Repaso.md",
     "Segundo Año/Acceso a datos - José Antonio/19) Programación Orientada a Aspectos 28_11_2024.md",
-    "CodewarConceptos/CODWARS EJERCICIOS/CODEWARS EJERCICIO 1.md",
     "CodewarConceptos/ABSTRACCIONES DE CONCEPTOS.md",
     "PROYECTO FINAL BIBLIOTECA",
     "CodewarConceptos/CODWARS EJERCICIOS",
@@ -197,8 +200,6 @@
     "Primer Año/Programación/Java/Java inicios (1).txt",
     "Primer Año/Programación/Java Script/Constructor.md",
     "Primer Año/Programación/Java Script/Clases.md",
-    "Primer Año/Programación/Java/Mis apuntes de JAVA.md",
-    "Primer Año/Programación/Java/Listado de Funcionalidades.md",
-    "Primer Año/Programación/Java/Conceptos importantes de cada proyecto.md"
+    "Primer Año/Programación/Java/Mis apuntes de JAVA.md"
   ]
 }
