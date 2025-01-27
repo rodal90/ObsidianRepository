@@ -158,3 +158,26 @@ Y el DisplayName nos da información del nombre
 Si usamos DisplayName arriba del método que vamos a testear lo que te sale por consola es el mensaje que le pusiste a la anotación DisplayName: @DisplayName("check right value for attribute prueba")
 
 Y si lo ponemos por encima de la clase aparece en la parte donde vemos si los test so correctos, con el nombre de el mensaje que hemos puesto. 
+
+
+---
+
+
+Anatomía de un test Un test mantenible no se parece a un script repleto de líneas de comandos. A ser posible sólo tiene tres bloques: la preparación, la ejecución y la validación. En inglés estas tres partes se identifican con las siglas AAA, lo que ayuda a recordarlas como Arrange, Act, Assert. Esta anatomía también la puedes encontrar nombrada como given, when, then. Si puedo conseguir que esos tres bloques sean de una sola línea, todavía mejor.
+
+
+---
+
+
+Dobles de prueba (Mocks) En esencia, son objetos o funciones que suplantan partes del código de producción. La necesidad de su uso surge cuando se quiere probar un artefacto que depende de otro. Una buena práctica a la hora de usarlos es no simular elementos de terceros. Es decir, si tienes que “mockear” una librería de terceros, crea un wrapper sobre ella y simula este último.
+
+
+Tipos de dobles: Según la terminología de Gerard Mezaros y Martin Fowler, existen principalmente 5 tipos de dobles: Stubs, spies, mocks estrictos, fakes y dummies. 
+
+DEFINICIONES: 
+
+Stubs: Son muy simples, no tienen memoria, sino que devuelven una respuesta concreta. Se usan para comprobar consultas que no son directas, es decir que no solamente opera con los posibles argumentos que pueda tener la función sino que requiere de otra fuente de datos. Los stubs permiten reemplazar esa fuente de datos. Por ejemplo, para reemplazar una llamada a una API o a una base de datos.
+
+Spies y Mocks estrictos Tanto los espías como los mocks estrictos son objetos que tienen memoria para registrar las llamadas que se les hacen. Estas llamadas las podemos consultar para verificar si el artefacto que queremos probar tiene el comportamiento esperado. Se usan para verificar comandos.
+
+Dummies y fake objects Los dummies solo se necesitan para completar los datos de un test, por ejemplo la lista de parámetros de un método. No suelen ser muy comunes en sistemas bien diseñados Los fakes objects son implementaciones completamente funcionales, pero simplificadas. Ayudan a abaratar las pruebas porque simplifican la forma en que se hace la validación o bien se ejecutan más rápido que si la pieza fuese la real. Por ejemplo un repositorio en memoria.

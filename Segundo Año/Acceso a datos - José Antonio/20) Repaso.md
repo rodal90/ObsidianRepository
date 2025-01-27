@@ -135,3 +135,19 @@ Asume que hay un sistema con usuarios y roles.
 @PreAuthorize("hasRole"('USER') or hasRole('MANAGER')")
 
 
+---
+
+spring: 3 injections ways:
+
+@Autowired
+
+Constructors
+
+Setters
+
+---
+
+Cuando es necesario utilizar un parámetro en el método o constructor, lo que se usa en test unitarios es ParameterResolver ("Resolutor de parámteros").
+
+
+
