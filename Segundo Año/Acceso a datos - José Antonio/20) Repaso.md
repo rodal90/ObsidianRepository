@@ -151,3 +151,55 @@ Cuando es necesario utilizar un parámetro en el método o constructor, lo que s
 
 
 
+---
+ORM object relational mapping, como mappeo una clase a una tabla SQL como puedo usar una tabla SQL en el modelo de datos.
+
+ORM Es mas un standard que una marca. 
+
+JPA Java Persistance  =>Es un standard ORM de Java y si esta incluido en las ultimas versiones de Java. (Osea que JPA es lo que hace compatible los objetos con la tablas y bases de datos)
+
+Hibernate (otro ORM) es una empresa tercera que ha creado librerias compatibles con JPA y ensancha su funcionalidad. (ejemplo Hibernate te da acceso a usar Bases de datos no relacionales).
+
+Repositorios: Conexiones con la base de datos, operaciones CRUD. 
+
+CrudRepository
+JpaRepository 
+Son interfaces!
+
+CRUD
+Insert(Create) de SQL se le llama en el repository => Save()
+Retrieve de SQL  se le llama en el repository => findAll() "Select * from Table", findById() "Select * from Table where ID"
+
+Update de SQL  con el save 
+
+Dele con deleteById o deleteAll
+
+otro existsById
+
+
+En los repositorios  si uno quiere tener más métodos hay que seguir una estructura específica hay que buscar la referencia para estar seguro de que la coja. Sintácticamente tiene una estructura.
+Por ejemplo: Si queremos buscar datos específicos.  
+
+A partir de la Interface de Repository crea una clase.
+
+
+//las bases de datos son más eficientes que los lenguajes de programacion para hacer busquedas y ordenaciones. 
+
+---
+Como hacer para meter más funcionalidades en los servicios
+
+Para ordenar algo, pues desde los servicios llamo al repositorio que tiene un findAll() para luego filtrarlo con bucles for o operaciones  stream.
+
+
+TODA LA LÓGICA DE NEGOCIOS EN SERVICIOS.
+
+---
+
+LOS CONTROLADORES LOS MAS TONTOS POSIBLES.
+
+los controladores recibe el input del usuario y le dice a donde tiene que ira buscar la información.
+Asegurarme de que si le mando a un lugar va ir a ese lugar
+
+---
+
+
