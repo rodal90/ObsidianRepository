@@ -181,3 +181,114 @@ Stubs: Son muy simples, no tienen memoria, sino que devuelven una respuesta conc
 Spies y Mocks estrictos Tanto los espías como los mocks estrictos son objetos que tienen memoria para registrar las llamadas que se les hacen. Estas llamadas las podemos consultar para verificar si el artefacto que queremos probar tiene el comportamiento esperado. Se usan para verificar comandos.
 
 Dummies y fake objects Los dummies solo se necesitan para completar los datos de un test, por ejemplo la lista de parámetros de un método. No suelen ser muy comunes en sistemas bien diseñados Los fakes objects son implementaciones completamente funcionales, pero simplificadas. Ayudan a abaratar las pruebas porque simplifican la forma en que se hace la validación o bien se ejecutan más rápido que si la pieza fuese la real. Por ejemplo un repositorio en memoria.
+
+---
+
+27_01_2025
+
+El  assertAll() se puede usar para varias aserciones en un solo test unitario cuando queremos testear lo mismo pero con distintos datos.
+
+### **¿Cómo funciona `assertAll`?**
+
+En lugar de detenerse en la primera afirmación fallida, como ocurre con las afirmaciones tradicionales, `assertAll` ejecuta todas las afirmaciones que contiene y reporta todas las fallas al final. Si todas las afirmaciones pasan, el test será exitoso.
+
+**Firma del método:**
+
+java
+
+CopiarEditar
+
+`static void assertAll(String heading, Executable... executables)`
+
+- **`heading`**: Un título opcional que describe el grupo de afirmaciones.
+- **`executables`**: Un vararg de expresiones que implementan la interfaz funcional `Executable`.
+
+---
+
+### **¿Por qué es válido usar `assertAll`?**
+
+1. **Validación exhaustiva**: Permite verificar múltiples condiciones en una sola prueba sin detenerse en la primera falla.
+2. **Más información en fallos**: Si múltiples condiciones fallan, muestra todos los errores en lugar de solo el primero. Esto facilita la depuración.
+3. **Organización**: Agrupa de manera lógica afirmaciones relacionadas, mejorando la legibilidad del test.
+
+---
+
+### **Reglas para usar `assertAll`**
+
+1. **Debe contener al menos una afirmación**: No tiene sentido llamarlo sin afirmaciones dentro.
+2. **Las afirmaciones deben ser independientes**: Cada afirmación debe ser autónoma y no depender del resultado de otras.
+3. **No afecta la lógica del test**: Si una afirmación falla, el resto se ejecuta, pero no cambia el flujo de ejecución fuera del test.
+4. **Evitar lógica compleja dentro de los `Executable`**: Es mejor mantener las afirmaciones simples y claras.
+
+
+```java
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PersonTest {
+
+    @Test
+    void testPersonProperties() {
+        Person person = new Person("Rodrigo", 30);
+
+        assertAll("Validating person properties",
+            () -> assertEquals("Rodrigo", person.getName(), "Name should be Rodrigo"),
+            () -> assertTrue(person.getAge() > 18, "Age should be greater than 18"),
+            () -> assertNotNull(person, "Person object should not be null")
+        );
+    }
+}```
+---
+
+Ciclo de vida del API de JUnit 5 
+
+- **@BeforeAll**: Configuración que se ejecuta una sola vez antes de todos los tests en la clase.
+- **@BeforeEach**: Configuración que se ejecuta antes de cada test (para evitar efectos secundarios de otros tests).
+- **@Test**: Define los tests unitarios.
+- **@AfterEach**: Limpieza que se ejecuta después de cada test.
+- **@AfterAll**: Limpieza que se ejecuta una sola vez después de la ejecución de todos los tests en la clase.
+
+Algunas de estas tienen mas sentido para test de integración que los test unitarios. 
+
+Ejemplos de uso: 
+
+_class BookShelfTest {_
+
+_@BeforeAll_
+
+_static void connectDB() {_
+_…_
+_}_
+// por ejemplo para cargar una lista de libros, pero si se modifican en alguno, ya esta viciado el dato, por eso que carguen todos con los mismos datos iniciales de los libros
+_@BeforeEach_
+
+_void initializeBookShelfWithDB() {_
+_…_
+_}_
+
+_@Test_
+
+_void shouldGiveBackAllBooksInShelf() {_
+
+_…_
+
+_}_
+
+  //borrar la lista despues de cada test
+_@AfterEach_
+
+_void deleteShelfFromDB() {_
+
+_…_
+
+_}_
+
+  //borrar todo me desconecto de la base de datos
+_@AfterAll_
+
+_static void closeConnectionDB() {_
+_…_
+_}_
+_}_
