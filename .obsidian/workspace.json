@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HAMASON PROYECTO JOSE ANTONIO/Data Base.md",
+                "file": "Segundo Año/Acceso a datos - José Antonio/4) 4ta. Clase   TDD y BDD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Base"
+              "title": "4) 4ta. Clase   TDD y BDD"
+            }
+          },
+          {
+            "id": "6b840dd9fbf736b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Segundo Año/Acceso a datos - José Antonio/6) GitHub introducción.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) GitHub introducción"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +55,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Explorador de archivos"
@@ -163,10 +179,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6bd6dc871531e56f",
+  "active": "6b840dd9fbf736b3",
   "lastOpenFiles": [
-    "Segundo Año/Acceso a datos - José Antonio/Frame.md",
+    "Segundo Año/Acceso a datos - José Antonio/5) Pasos de Spring Initializr 03_10_2024.md",
     "HAMASON PROYECTO JOSE ANTONIO/Data Base.md",
+    "Segundo Año/Acceso a datos - José Antonio/Frame.md",
     "CodewarConceptos/CODWARS EJERCICIOS/CODEWARS EJERCICIO 1.md",
     "PROYECTO FINAL BIBLIOTECA/Planificación.md",
     "Segundo Año/Emprendimiento Empresarial-Mar/Punto Muerto.md",
@@ -199,7 +216,6 @@
     "Primer Año/Sistemas",
     "Primer Año/Programación/Java/Java inicios (1).txt",
     "Primer Año/Programación/Java Script/Constructor.md",
-    "Primer Año/Programación/Java Script/Clases.md",
-    "Primer Año/Programación/Java/Mis apuntes de JAVA.md"
+    "Primer Año/Programación/Java Script/Clases.md"
   ]
 }
